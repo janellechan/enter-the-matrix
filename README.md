@@ -19,8 +19,10 @@ Example:
 
 ## Including dependencies in the HTML
 Socket.io and Matter.js are included by adding the scripts to the web page:
+  ```
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.0/matter.min.js"></script>
+  ```
 
 ## .gitignore
 This project includes a .gitignore file listing common files created by MacOS and Windows, and Node directories and files that should not be included with your commits. `node_modules` should be specific to your operating system and computer, and then we can use [shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) to lock down the full dependency tree. StackOverflow has a good thread discussing the decision behind this [here](https://stackoverflow.com/questions/11459475/should-i-check-in-folder-node-modules-to-git-when-creating-a-node-js-app-on-he).
