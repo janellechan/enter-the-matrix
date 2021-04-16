@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Lato', monospace;
+  color: rgb(226, 226, 226);
+  font-size: 15px;
+}
+
+a {
+  color: rgb(57, 56, 109);
+}
+
+a:visited {
+  color: rgb(57, 56, 109);
+  font-style: italic;
+  text-decoration: none;
+}
+  
+a:hover {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.main-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: calc(100vw - 60px);
+  height: calc(90vh - 60px);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#content-container {
+  position: relative;
+  display: inline-block;
+  flex-wrap: wrap;
+  overflow: hidden;
+  width: 70vw;
+  height: 70vw;
+  text-align: inherit;
+}
+
+canvas {
+  position: relative;
+  display: inline-block;
+  flex-wrap: wrap;
+  width: 600;
+  height: 600;
+  border: 5px solid rgb(139, 139, 139);
+}
