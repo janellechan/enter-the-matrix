@@ -21,23 +21,8 @@ var polyEl = document.querySelector('.svg-attributes-demo polygon');
 		autoplay: false
 	});
 
-	var animateTerminal = anime({
-		targets: '.box #block',
-		translateX: 175,
-  		direction: 'normal',
-  		easing: 'steps(14)',
-		autoplay: false,
-		begin:function(){
-			enterArray.forEach((letter, i) => {
-			setTimeout(() => {
-				display(letter);
-			}, i * 75);
-		});
-		}
-	});
-
-	var animateTerminal2 = anime({
-		targets: '.box #block',
+	var animateFooter = anime({
+		targets: '.box #enterFooterCursor',
 		translateX: 175,
   		direction: 'normal',
   		easing: 'steps(14)',
@@ -45,14 +30,29 @@ var polyEl = document.querySelector('.svg-attributes-demo polygon');
 		begin:function(){
 			aloneArray.forEach((letter, i) => {
 			setTimeout(() => {
-				display(letter);
+				displayFooter(letter);
+			}, i * 75);
+		});
+		}
+	});
+
+	var animateHeader = anime({
+		targets: '.header #enterHeaderCursor',
+		translateX: 175,
+  		direction: 'normal',
+  		easing: 'steps(14)',
+		autoplay: false,
+		begin:function(){
+			enterArray.forEach((letter, i) => {
+			setTimeout(() => {
+				displayHeader(letter);
 			}, i * 75);
 		});
 		}
 	});
 
 	anime({
-		targets: '.box #block',
+		targets: '#enterFooterCursor',
 		opacity: 0,
 		duration: 300,
 		loop: true,
@@ -60,18 +60,16 @@ var polyEl = document.querySelector('.svg-attributes-demo polygon');
 		direction: 'alternate'
 	});
 
-	function display(letter) {
-		var node = document.createElement("span");
-		var textNode = document.createTextNode(letter);
-		node.appendChild(textNode);
-		document.querySelector('#enterSpan').appendChild(node);	
-	}
+    anime({
+		targets: '#enterHeaderCursor',
+		opacity: 0,
+		duration: 300,
+		loop: true,
+		easing: 'linear',
+		direction: 'alternate'
+	});
 
-	document.querySelector('.triggerTerminal').onclick = animateTerminal.play;
-	document.querySelector('.triggerVoid').onclick = animateVoid.play;
-	document.querySelector('.triggerTerminal2').onclick = animateTerminal2.play;
-
-	// Marisa's animation 
+    // Marisa's animation 
 	anime({
 		targets: '#grid',
 		scale: [
@@ -80,3 +78,22 @@ var polyEl = document.querySelector('.svg-attributes-demo polygon');
 		],
 		delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
 	  });
+
+	function displayFooter(letter) {
+		var node = document.createElement("span");
+		var textNode = document.createTextNode(letter);
+		node.appendChild(textNode);
+		document.querySelector('#enterFooterText').appendChild(node);	
+	}
+
+    function displayHeader(letter) {
+		var node = document.createElement("span");
+		var textNode = document.createTextNode(letter);
+		node.appendChild(textNode);
+		document.querySelector('#enterHeaderText').appendChild(node);	
+	}
+
+	document.querySelector('.triggerFooter').onclick = animateFooter.play;
+	document.querySelector('.triggerVoid').onclick = animateVoid.play;
+	// document.querySelector('.triggerTerminal2').onclick = animateTerminal2.play;
+	document.querySelector('.triggerHeader').onclick = animateHeader.play;

@@ -9,7 +9,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.0/matter.min.js"></script>
   <script src="/js/anime.js"></script>
 </head>
-
 <body>
   <!-- Contains the main content. `js/interactive.js` is finding the canvas element, replacing
   ---- its dimensions, and populating with content. -->
@@ -17,7 +16,12 @@
 
   <div id="grid" class="main-container">
     <div id="content-container">
-
+      <div class="header">
+        <div class="enterHeader">
+          <div id="enterHeaderText"></div>
+          <div id="enterHeaderCursor"></div>
+        </div>
+    </div>
       <div class="svg-attributes-demo">
         <svg width="400" height="400" viewbox="0 0 128 128">
         <defs>
@@ -45,14 +49,14 @@
         </svg>
       </div>
       <div class="box">
-      <div class="textAndCursor">
-        <div id="enterSpan"></div>
-        <div id="block"></div>
-      </div>
+        <div class="enterFooter">
+          <div id="enterFooterText"></div>
+          <div id="enterFooterCursor"></div>
+        </div>
       </div>
       <button class="triggerVoid">Trigger Void</button>
-      <button class="triggerTerminal">Trigger Terminal</button>
-      <button class="triggerTerminal2">Trigger Terminal 2</button>
+      <button class="triggerFooter">Trigger Footer</button>
+      <button class="triggerHeader">Trigger Header</button>
     </div>
   </div>
   <script type="text/javascript" src="/js/herson.js"></script>
