@@ -1,3 +1,8 @@
+var socket = io();
+// Printing data to the console
+socket.on('message', function(data) {
+  console.log(data);
+});
 
 var polyEl = document.querySelector('.svg-attributes-demo polygon');
 	var feTurbulenceEl = document.querySelector('feTurbulence');

@@ -13,7 +13,8 @@ app.set('port', 5000);
 // to access them. "/js" and "/css" are virtual path prefixes, so if the path doesn't exist, node.js
 // is searching from the path we specify. `__dirname` is the root folder. (https://expressjs.com/en/starter/static-files.html)
 // app.use('/script', express.static(__dirname + '/node_modules'));
-app.use('img', express.static(__dirname + 'img'));
+app.use(express.static('public'));
+app.use('/img', express.static(__dirname + '/img'));
 app.use('/js', express.static(__dirname + '/js'));
 app.use('/css', express.static(__dirname + '/css'));
 
