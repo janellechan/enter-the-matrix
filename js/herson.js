@@ -70,3 +70,13 @@ var polyEl = document.querySelector('.svg-attributes-demo polygon');
 	document.querySelector('.triggerTerminal').onclick = animateTerminal.play;
 	document.querySelector('.triggerVoid').onclick = animateVoid.play;
 	document.querySelector('.triggerTerminal2').onclick = animateTerminal2.play;
+
+	// Marisa's animation 
+	anime({
+		targets: '#grid',
+		scale: [
+		  {value: .1, easing: 'easeOutSine', duration: 500},
+		  {value: 1, easing: 'easeInOutQuad', duration: 1200}
+		],
+		delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
+	  });
