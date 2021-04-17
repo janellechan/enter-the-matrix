@@ -1,12 +1,17 @@
 * {
   padding: 0;
   margin: 0;
+  cursor: url(../redpill.png), auto;
 }
 
 body {
+  position: absolute;
   font-family: 'Lato', monospace;
   color: rgb(226, 226, 226);
   font-size: 15px;
+  background-color: black;
+  height: 100%;
+  width: 100%;
 }
 
 a {
@@ -55,14 +60,16 @@ canvas {
   border: 5px solid rgb(139, 139, 139);
 }
 
-/* Herson's section */
+/* Marisa's section */
 
-svg {
-  background-image:
-    repeating-linear-gradient(#03A062 0 1px, transparent 1px 100%),
-    repeating-linear-gradient(90deg, #03A062 0 1px, transparent 1px 100%);
-  background-size: 71px 71px;
+#grid {
+  background-color: transparent;
+  background-image:       linear-gradient(0deg, transparent 24%, #23eb08 25%, #23eb08 26%, transparent 27%, transparent 74%, #23eb08 75%, #23eb08 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, #23eb08 25%,#23eb08 26%, transparent 27%, transparent 74%, #23eb08 75%,#23eb08 76%, transparent 77%, transparent);
+height:100%;
+background-size:50px 50px;
 }
+
+/* Herson's section */
 
 .textAndCursor {
   display: inline-block;
