@@ -4,7 +4,8 @@
   "description": "Interactive web page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,11 @@
   },
   "homepage": "https://github.com/janellechan/enter-the-matrix#readme",
   "dependencies": {
+    "animejs": "^3.2.1",
     "express": "^4.17.1",
     "matterjs": "^0.1.3",
     "require.js": "^1.0.0",
     "socket.io": "^4.0.1"
-  }
+  },
+  "devDependencies": {}
 }
