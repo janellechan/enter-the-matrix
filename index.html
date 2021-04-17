@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.0/matter.min.js"></script>
+  <script src="script/animejs/lib/anime.js"></script>
 </head>
 
 <body>
@@ -14,9 +15,43 @@
   ---- its dimensions, and populating with content. -->
   <div class="main-container">
     <div id="content-container">
-      <canvas></canvas>
+      <div class="svg-attributes-demo">
+        <svg width="400" height="400" viewbox="0 0 128 128">
+        <defs>
+          <pattern id="img1" patternUnits="userSpaceOnUse" width="200" height="200">
+            <image href="void.jpg" x="0" y="0" width="200" height="200" />
+          </pattern>
+          </defs>
+          <filter id="displacementFilter">
+            <feTurbulence 
+              type="turbulence" 
+            numOctaves="2"
+            result="turbulence"
+            style="transform: scale(1);">
+            </feTurbulence>
+          <feDisplacementMap 
+            in2="turbulence" 
+            in="SourceGraphic" 
+            xChannelSelector="R"
+            yChannelSelector="G">
+          </feDisplacementMap>
+          </filter>
+          <polygon fill="url(#img1)" style="filter: url(#displacementFilter);
+                    transform: scale(1);">
+          </polygon>
+        </svg>
+      </div>
+      <div class="box">
+      <div class="textAndCursor">
+        <div id="enterSpan"></div>
+        <div id="block"></div>
+      </div>
+      </div>
+      <button class="triggerVoid">Trigger Void</button>
+      <button class="triggerTerminal">Trigger Terminal</button>
+      <button class="triggerTerminal2">Trigger Terminal 2</button>
     </div>
   </div>
-  <script type="text/javascript" src="js/interactive.js"></script>
+  <script type="text/javascript" src="js/herson.js"></script>
 </body>
 </html>
